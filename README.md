@@ -56,6 +56,7 @@ strony przez niepełnosprawnych.
   * [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#When_should_you_use_WAI-ARIA)
 
 * em, strong, abbr jako oznaczenie kawalku kodu w tekscie
+* focusTrap [link](https://css-tricks.com/a-css-approach-to-trap-focus-inside-of-an-element/)
 
 ## Links
 https://www.digitala11y.com/accessibility-plug-ins-ie-chrome-firefox-browsers/ -a11y browser extensions

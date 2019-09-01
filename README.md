@@ -1,0 +1,62 @@
+# A11y
+
+## Cel
+
+Celem prezentacji jest zachęcenie słuchaczy do aktywnego korzystania z
+natywnych elementow i atrybutow HTML pozwalających na korzystanie ze
+strony przez niepełnosprawnych.  
+
+## Plan prezentacji
+
+1. Pokazanie ladnej i dzialajacej strony.
+2. Przejechanie strony jakims benchmarkiem do A11y i stwierdzenie, ze strona to jednak ssie pale.
+3. Udowodnienie, ze tak faktycznie jest poprzez przejechanie strony screen readerem.
+4. Zafixowanie strony
+5. ???
+6. Profit
+
+
+## Jakie issuesy pokazac na stronie?
+
+* Form [link](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form)
+  * fieldset, legend
+  * input with label 
+  * `<label for="username">Name: <abbr title="required">*</abbr></label>`
+  * role="presentation" nie czyta obrazka
+  * [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript#Keeping_it_unobtrusive)
+  `<div class="errors" role="alert" aria-relevant="all">` - errory w walidacji pola
+
+* Img [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Text_alternatives)
+  * alt
+  * empty alt [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Empty_alt_attributes)
+  * longdesc
+* Button [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
+  * div jako button
+  * button, ktory tak na prawde ma funkcjonalnosc linku
+  * icon-button, ktory nie jest dobrze opisany.
+  * nazwa/opis powinien byc znaczący, bo "Click here" nic nie mowi screen readerow 
+* div, ktory wyglada jak h1,h2,h3,h4,h5
+* brak header, main, footer, navigation, aside,
+* brak article, section, itp.
+* Tabela [link](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced):
+  * dodanie tagu caption
+  * thead, tfoot, tbody - nie powoduja czytania inaczej przez screen readery
+  * scope="col", scope="row"
+* lista ktora jest divem zamiast ul
+* bloki tekstu nie sa w tagu p
+* WAI-ARIA [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics)
+  * `role="..."`
+  * aria-labelledby
+  * aria-label
+  * aria-required
+  * aria-disabled
+  * aria-live, aria-atomic="true", aria-relevant (notification about dynamic content) 
+  [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#Dynamic_content_updates)
+  (The following example uses role=alert which is equivalent to using aria-live=assertive.)
+  * [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#When_should_you_use_WAI-ARIA)
+
+* em, strong, abbr jako oznaczenie kawalku kodu w tekscie
+
+## Links
+https://www.digitala11y.com/accessibility-plug-ins-ie-chrome-firefox-browsers/ -a11y browser extensions
+https://www.w3.org/TR/wai-aria-practices/examples/landmarks/navigation.html - aria components

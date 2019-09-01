@@ -58,6 +58,7 @@ strony przez niepełnosprawnych.
 * em, strong, abbr jako oznaczenie kawalku kodu w tekscie
 * focusTrap [link](https://css-tricks.com/a-css-approach-to-trap-focus-inside-of-an-element/)
 * css grid nie zmienia orderu focusowania
+* labelki na chartach
 
 ## Links
 https://www.digitala11y.com/accessibility-plug-ins-ie-chrome-firefox-browsers/ -a11y browser extensions

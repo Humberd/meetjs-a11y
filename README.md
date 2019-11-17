@@ -31,11 +31,15 @@ strony przez niepełnosprawnych.
   * empty alt [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Empty_alt_attributes)
   * longdesc
 * Button [link](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
+  > https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role  
+  > If using role="button" instead of the semantic <button> or <input type="button"> elements, you will need to make the element focusable and have to define event handlers for click and keydown events, including the Enter and Space keys, in order to process the user's input. See the official WAI-ARIA example code.
   * div jako button
+  * :focus, :active
   * button, ktory tak na prawde ma funkcjonalnosc linku
   * icon-button, ktory nie jest dobrze opisany.
   * nazwa/opis powinien byc znaczący, bo "Click here" nic nie mowi screen readerow 
 * div, ktory wyglada jak h1,h2,h3,h4,h5
+* Selectow w htmlu nie mozna stylowac zbyt dobrze, wiec jesli chcesz tworzyc wlasny, to musisz bardzo uwazac zeby byl accessible, albo uzyc gotowej biblioteki
 * brak header, main, footer, navigation, aside,
 * brak article, section, itp.
 * Tabela [link](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced):

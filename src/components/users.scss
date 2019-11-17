@@ -1,0 +1,23 @@
+.UsersList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.UserListItem {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+
+	.avatar {
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+
+		margin-right: 15px;
+	}
+
+	.options {
+		margin-left: auto;
+	}
+}

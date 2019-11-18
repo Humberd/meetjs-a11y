@@ -3,6 +3,7 @@ import { observable } from 'mobx';
 import { Dialog } from '../components/dialog';
 
 export class DialogsService {
+
   @observable
   dialogRef: DialogRef<any> | null = null;
 
@@ -11,7 +12,10 @@ export class DialogsService {
         title="Add User"
         onClose={() => dialogRef.closeDialog()}
     >
-      <button className="app-button">
+      <button
+          className="app-button"
+          onClick={() => dialogRef.closeDialog()}
+      >
         Close
       </button>
       <button className="app-button">

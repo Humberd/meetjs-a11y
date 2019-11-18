@@ -1,5 +1,5 @@
 import React from 'react';
-import { NewUser, User, UserStatus } from './models';
+import { NewUser, User, UserStatus } from '../models';
 import { observable } from 'mobx';
 
 const initialUsers: User[] = [

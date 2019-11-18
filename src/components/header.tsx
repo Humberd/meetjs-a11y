@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import './header.scss';
-import { UsersContext } from '../users-context';
+import { UsersContext } from '../services/users.service';
 import { UserStatus } from '../models';
 
 export const AppHeader: React.FC = () => {

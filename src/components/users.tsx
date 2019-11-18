@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { User } from '../models';
 import { FaEllipsisH } from 'react-icons/all';
 import './users.scss';
-import { UsersContext } from '../users-context';
+import { UsersContext } from '../services/users.service';
 import { observer } from 'mobx-react';
 
 export const UsersList = observer(() => {

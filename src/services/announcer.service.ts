@@ -10,5 +10,5 @@ export class AnnouncerService {
   }
 }
 
-
-export const AnnouncerContext = React.createContext(new AnnouncerService());
+export const GlobalAnnouncer = new AnnouncerService();
+export const AnnouncerContext = React.createContext(GlobalAnnouncer);

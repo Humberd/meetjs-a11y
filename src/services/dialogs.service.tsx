@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
 import { observable } from 'mobx';
 import { Dialog } from '../components/dialog';
+import { GlobalAnnouncer } from './announcer.service';
 
 export class DialogsService {
-
   @observable
   dialogRef: DialogRef<any> | null = null;
 
@@ -24,7 +24,11 @@ export class DialogsService {
 
     </Dialog>);
 
-    dialogRef.addOnCloseListener(() => this.dialogRef = null);
+    dialogRef.addOnCloseListener(() => {
+      this.dialogRef = null;
+      GlobalAnnouncer.announce("Dialog closed")
+    });
+    GlobalAnnouncer.announce('Dialog opened');
 
     this.dialogRef = dialogRef;
 

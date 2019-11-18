@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import './header.scss';
+import { UsersContext } from '../users-context';
+import { UserStatus } from '../models';
 
 export const AppHeader: React.FC = () => {
+  const usersService = useContext(UsersContext);
+
   const openModal = () => {
-    // @ts-ignore
+    usersService.addUser({
+      name: 'foobar',
+      avatar: '',
+      status: UserStatus.ACTIVE
+    })
   };
 
   return (

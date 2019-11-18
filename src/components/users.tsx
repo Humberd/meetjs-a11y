@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { User } from '../models';
 import { FaEllipsisH } from 'react-icons/all';
 import './users.scss';
+import { UsersContext } from '../users-context';
+import { observer } from 'mobx-react';
 
-interface UsersListProps {
-  users: User[]
-}
+export const UsersList = observer(() => {
+  const users = useContext(UsersContext);
 
-export const UsersList: React.FC<UsersListProps> = ({users}) => {
   return (
       <ul className="UsersList">
-        {users.map(user => (
+        {users.users.map(user => (
             <li key={user.id}>
               <UserItem user={user}/>
             </li>
         ))}
       </ul>
   );
-};
+});
 
 export interface UserItemProps {
   user: User

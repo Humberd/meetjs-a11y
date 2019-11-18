@@ -1,0 +1,20 @@
+.AppDialog--Backdrop {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #00000054;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.AppDialog {
+	width: 400px;
+	height: 300px;
+	margin-top: -200px;
+
+	background-color: #efefef;
+}

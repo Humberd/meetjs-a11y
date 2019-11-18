@@ -67,3 +67,4 @@ strony przez niepełnosprawnych.
 ## Links
 https://www.digitala11y.com/accessibility-plug-ins-ie-chrome-firefox-browsers/ -a11y browser extensions
 https://www.w3.org/TR/wai-aria-practices/examples/landmarks/navigation.html - aria components
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role - dialog

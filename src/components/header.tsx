@@ -3,16 +3,26 @@ import { FaPlus } from 'react-icons/fa';
 import './header.scss';
 import { UsersContext } from '../services/users.service';
 import { UserStatus } from '../models';
+import { DialogsContext } from '../services/dialogs.service';
 
 export const AppHeader: React.FC = () => {
   const usersService = useContext(UsersContext);
+  const dialogsService = useContext(DialogsContext);
 
   const openModal = () => {
-    usersService.addUser({
-      name: 'foobar',
-      avatar: '',
-      status: UserStatus.ACTIVE
-    })
+    const ref = dialogsService.openCreateDialog();
+
+    ref.addOnCloseListener(result => {
+      if (!result) {
+        return
+      }
+
+      usersService.addUser({
+        name: 'foobar',
+        avatar: '',
+        status: UserStatus.ACTIVE,
+      });
+    });
   };
 
   return (

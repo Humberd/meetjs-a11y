@@ -1,41 +1,39 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogFooter, DialogHeader } from '../dialog';
 import { OnCloseListener } from '../../services/dialogs.service';
-import { NewUser, UserStatus } from '../../models';
+import { NewUser } from '../../models';
+import useForm from 'react-hook-form';
+import './create-user-dialog.scss';
 
 export interface CreateUserDialogProps<T> {
   onClose: OnCloseListener<T>
 }
 
 export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onClose}) => {
-  const onSubmit = () => {
-    onClose({
-      name: 'abc',
-      avatar: '',
-      status: UserStatus.ACTIVE,
-    });
+  const {register, handleSubmit} = useForm();
+
+  const onSubmit = (result: any) => {
+    onClose(result as NewUser);
   };
 
-
   return (
-      <form onSubmit={onSubmit}>
+      <form className="CreateUserDialogForm" onSubmit={handleSubmit(onSubmit)}>
         <Dialog onClose={onClose}>
           <DialogHeader title="Create User" onClose={onClose}/>
-          <DialogContent>
+
+          <DialogContent className="content">
             <label>
               Name
-              <input name="name" type="text"/>
+              <input name="name" type="text" ref={register}/>
             </label>
 
             <label>
               Is active
-              <input name="isActive" type="checkbox"/>
+              <input name="isActive" type="checkbox" ref={register}/>
             </label>
           </DialogContent>
 
           <DialogFooter submitLabel="Create" onClose={onClose}/>
-
-
         </Dialog>
       </form>
 

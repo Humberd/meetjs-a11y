@@ -57,9 +57,13 @@ export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title})
   );
 };
 
-export const DialogContent: React.FC = ({children}) => {
+export interface DialogContentProps {
+  className?: string
+}
+
+export const DialogContent: React.FC<DialogContentProps> = ({className, children}) => {
   return (
-      <section className="DialogContent">
+      <section className={className + ' DialogContent'}>
         {children}
       </section>
   );

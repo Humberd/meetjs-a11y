@@ -1,5 +1,5 @@
 import React from 'react';
-import { NewUser, User, UserStatus } from '../models';
+import { NewUser, User } from '../models';
 import { observable } from 'mobx';
 
 const initialUsers: User[] = [
@@ -7,13 +7,13 @@ const initialUsers: User[] = [
     id: 1,
     name: 'Bob',
     avatar: 'https://i7.pngguru.com/preview/178/419/741/computer-icons-avatar-login-user-avatar.jpg',
-    status: UserStatus.ACTIVE,
+    isActive: true,
   },
   {
     id: 2,
     name: 'Alice',
     avatar: 'https://p7.hiclipart.com/preview/118/942/565/computer-icons-avatar-child-user-avatar-thumbnail.jpg',
-    status: UserStatus.INACTIVE,
+    isActive: false,
   },
 ];
 let usersCounter = initialUsers.length;

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import './header.scss';
 import { UsersContext } from '../services/users.service';
-import { UserStatus } from '../models';
 import { DialogsContext } from '../services/dialogs.service';
 
 export const AppHeader: React.FC = () => {
@@ -18,11 +17,7 @@ export const AppHeader: React.FC = () => {
         return
       }
 
-      usersService.addUser({
-        name: 'foobar',
-        avatar: '',
-        status: UserStatus.ACTIVE,
-      });
+      usersService.addUser(result);
     });
   };
 

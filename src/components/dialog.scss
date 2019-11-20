@@ -44,6 +44,7 @@ $dialog-side-margin: 20px;
 
 	display: flex;
 	justify-content: flex-end;
+	user-select: none;
 
 	.close {
 		margin-right: 10px;

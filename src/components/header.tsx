@@ -8,11 +8,10 @@ export const AppHeader: React.FC = () => {
   const usersService = useContext(UsersContext);
   const dialogsService = useContext(DialogsContext);
 
-  const openModal = () => {
+  const openDialog = () => {
     const ref = dialogsService.openCreateUserDialog();
 
     ref.addOnCloseListener(result => {
-      console.log({result});
       if (!result) {
         return
       }
@@ -27,7 +26,7 @@ export const AppHeader: React.FC = () => {
 
         <button
             className="app-button new"
-            onClick={openModal}
+            onClick={openDialog}
         >
           New
           <FaPlus/>

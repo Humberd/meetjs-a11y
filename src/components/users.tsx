@@ -11,11 +11,17 @@ export const UsersList = observer(() => {
 
   return (
       <ul className="UsersList">
-        {users.users.map(user => (
+        {users.users.length > 0 && users.users.map(user => (
             <li key={user.id}>
               <UserItem user={user}/>
             </li>
         ))}
+
+        {users.users.length === 0 &&
+          <p className="no-results">
+            No results
+          </p>
+        }
       </ul>
   );
 });

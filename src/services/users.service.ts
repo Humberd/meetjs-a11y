@@ -29,25 +29,39 @@ export class UsersService {
   @observable
   users: User[] = initialUsers;
 
+  private allUsers: User[] = initialUsers;
+
+  @observable
+  searchQuery = '';
+
   addUser(user: NewUser) {
-    this.users = [
+    this.allUsers = [
       ...this.users,
       {
         ...user,
         id: ++usersCounter,
       },
     ];
+
+    this.filterUsers(this.searchQuery)
   }
 
   deleteUser(userId: number) {
-    this.users = this.users.filter(user => user.id !== userId);
+    this.allUsers = this.allUsers.filter(user => user.id !== userId);
+    this.filterUsers(this.searchQuery)
   }
 
   updateUser(user: User) {
-    const userIndex = this.users.findIndex(it => it.id === user.id);
-    const newUsers = [...this.users];
+    const userIndex = this.allUsers.findIndex(it => it.id === user.id);
+    const newUsers = [...this.allUsers];
     newUsers.splice(userIndex, 1, user);
-    this.users = newUsers;
+    this.allUsers = newUsers;
+    this.filterUsers(this.searchQuery)
+  }
+
+  filterUsers(searchQuery: string) {
+    this.searchQuery = searchQuery;
+    this.users = this.allUsers.filter(it => it.name.toLowerCase().includes(searchQuery.toLowerCase()))
   }
 }
 

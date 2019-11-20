@@ -7,6 +7,7 @@ import { DialogsContext } from './services/dialogs.service';
 import { observer } from 'mobx-react';
 import { AnnouncerContext } from './services/announcer.service';
 import Announcer from 'react-a11y-announcer';
+import { SearchBar } from './components/search-bar';
 
 const App: React.FC = observer(() => {
   const dialogsService = useContext(DialogsContext);
@@ -15,6 +16,7 @@ const App: React.FC = observer(() => {
   return (
       <main className="App">
         <AppHeader/>
+        <SearchBar/>
         <UsersList/>
         <Announcer text={announcerService.text}/>
         {dialogsService.dialogRef && dialogsService.dialogRef.elem}

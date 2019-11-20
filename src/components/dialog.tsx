@@ -12,7 +12,7 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
   useEffect(() => listenForEscKey(onClose), [onClose]);
 
   return (
-      <div className="AppDialog--Backdrop" onClick={onClose}>
+      <div className="AppDialog--Backdrop" onClick={() => onClose()}>
         <FocusTrap
             focusTrapOptions={{
               clickOutsideDeactivates: true,
@@ -36,33 +36,6 @@ function listenForEscKey(onClose: () => any) {
   return () => document.removeEventListener('keydown', listener);
 }
 
-export interface DialogFooterProps<T> {
-  submitLabel: string;
-  onClose: OnCloseListener<T>;
-}
-
-export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, submitLabel}) => {
-  return (
-      <footer className="DialogFooter">
-        <button className="app-button close" onClick={onClose} type="button">
-          Close
-        </button>
-        <button className="app-button" type="submit">
-          {submitLabel}
-        </button>
-      </footer>
-  );
-};
-
-
-export const DialogContent: React.FC = ({children}) => {
-  return (
-      <section className="DialogContent">
-        {children}
-      </section>
-  );
-};
-
 export interface DialogHeaderProps<T> {
   title: string;
   onClose: OnCloseListener<T>;
@@ -76,10 +49,37 @@ export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title})
         </h2>
 
         <button
-            className="app-button only-icon" onClick={onClose} type="button"
+            className="app-button only-icon" onClick={() => onClose()} type="button"
         >
           <FaTimes/>
         </button>
       </header>
   );
 };
+
+export const DialogContent: React.FC = ({children}) => {
+  return (
+      <section className="DialogContent">
+        {children}
+      </section>
+  );
+};
+
+export interface DialogFooterProps<T> {
+  submitLabel: string;
+  onClose: OnCloseListener<T>;
+}
+
+export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, submitLabel}) => {
+  return (
+      <footer className="DialogFooter">
+        <button className="app-button close" onClick={() => onClose()} type="button">
+          Close
+        </button>
+        <button className="app-button" type="submit">
+          {submitLabel}
+        </button>
+      </footer>
+  );
+};
+

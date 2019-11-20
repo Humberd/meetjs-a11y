@@ -18,11 +18,9 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
 
 
   return (
-      <Dialog onClose={onClose}>
-        <DialogHeader title="Create User" onClose={onClose}/>
-
-        <form onSubmit={onSubmit}>
-
+      <form onSubmit={onSubmit}>
+        <Dialog onClose={onClose}>
+          <DialogHeader title="Create User" onClose={onClose}/>
           <DialogContent>
             <label>
               Name
@@ -36,10 +34,10 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
           </DialogContent>
 
           <DialogFooter submitLabel="Create" onClose={onClose}/>
-        </form>
 
 
-      </Dialog>
+        </Dialog>
+      </form>
 
   );
 };

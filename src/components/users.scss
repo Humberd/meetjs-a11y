@@ -14,7 +14,11 @@
 	align-items: center;
 	margin: 20px 0;
 
-	.options {
+	.actions {
 		margin-left: auto;
+
+		.edit {
+			margin-right: 10px;
+		}
 	}
 }

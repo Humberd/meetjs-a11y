@@ -43,12 +43,12 @@ export class UsersService {
       },
     ];
 
-    this.filterUsers(this.searchQuery)
+    this.filterUsers(this.searchQuery);
   }
 
   deleteUser(userId: number) {
     this.allUsers = this.allUsers.filter(user => user.id !== userId);
-    this.filterUsers(this.searchQuery)
+    this.filterUsers(this.searchQuery);
   }
 
   updateUser(user: User) {
@@ -56,12 +56,12 @@ export class UsersService {
     const newUsers = [...this.allUsers];
     newUsers.splice(userIndex, 1, user);
     this.allUsers = newUsers;
-    this.filterUsers(this.searchQuery)
+    this.filterUsers(this.searchQuery);
   }
 
   filterUsers(searchQuery: string) {
     this.searchQuery = searchQuery;
-    this.users = this.allUsers.filter(it => it.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    this.users = this.allUsers.filter(it => it.name.toLowerCase().includes(searchQuery.toLowerCase()));
   }
 }
 

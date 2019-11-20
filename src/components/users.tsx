@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { User } from '../models';
-import { FaEllipsisH } from 'react-icons/all';
+import { FaEdit, FaTrash } from 'react-icons/all';
 import './users.scss';
 import { UsersContext } from '../services/users.service';
 import { observer } from 'mobx-react';
 import { Avatar } from './avatar';
+import { DialogsContext } from '../services/dialogs.service';
 
 export const UsersList = observer(() => {
   const users = useContext(UsersContext);
@@ -18,9 +19,9 @@ export const UsersList = observer(() => {
         ))}
 
         {users.users.length === 0 &&
-          <p className="no-results">
-            No results
-          </p>
+        <p className="no-results">
+          No results
+        </p>
         }
       </ul>
   );
@@ -30,14 +31,51 @@ export interface UserItemProps {
   user: User
 }
 
-export const UserItem: React.FC<UserItemProps> = ({user}) => {
+export const UserItem: React.FC<UserItemProps> = observer(({user}) => {
+  const usersService = useContext(UsersContext);
+  const dialogsService = useContext(DialogsContext);
+
+  const onUpdateUser = () => {
+    const ref = dialogsService.openEditUserDialog(user);
+    ref.addOnCloseListener(newUser => {
+      if (!newUser) {
+        return;
+      }
+      usersService.updateUser(newUser);
+    });
+  };
+
+  const onDeleteUser = () => {
+    const ref = dialogsService.openDeleteUserDialog(user);
+    ref.addOnCloseListener(result => {
+      if (!result) {
+        return;
+      }
+      usersService.deleteUser(user.id);
+    });
+  };
+
   return (
       <div className="UserListItem">
         <Avatar src={user.avatar}/>
         <span>{user.name}</span>
-        <button className="app-button only-icon options">
-          <FaEllipsisH/>
-        </button>
+
+        <section className="actions">
+          <button
+              className="app-button only-icon edit"
+              title="Edit user"
+              onClick={onUpdateUser}
+          >
+            <FaEdit/>
+          </button>
+          <button
+              className="app-button only-icon delete"
+              title="Delete user"
+              onClick={onDeleteUser}
+          >
+            <FaTrash/>
+          </button>
+        </section>
       </div>
   );
-};
+});

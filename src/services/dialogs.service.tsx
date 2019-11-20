@@ -3,6 +3,7 @@ import { observable } from 'mobx';
 import { GlobalAnnouncer } from './announcer.service';
 import { CreateUserDialog } from '../components/dialogs/create-user-dialog';
 import { NewUser, User } from '../models';
+import { DeleteUserDialog } from '../components/dialogs/delete-user-dialog';
 
 export class DialogsService {
   @observable
@@ -15,12 +16,26 @@ export class DialogsService {
   }
 
   openEditUserDialog(user: User): DialogRef<User> {
-    const dialogRef = new DialogRef<User>(<CreateUserDialog onClose={result => {
-      if (!result) {
-        return dialogRef.closeDialog()
-      }
-      return dialogRef.closeDialog({...result, id: user.id});
-    }}/>);
+    const dialogRef = new DialogRef<User>(
+        <CreateUserDialog
+            existingUser={user}
+            onClose={result => {
+              if (!result) {
+                return dialogRef.closeDialog();
+              }
+              return dialogRef.closeDialog({...result, id: user.id});
+            }}
+        />);
+
+    return this.openDialog(dialogRef);
+  }
+
+  openDeleteUserDialog(user: User): DialogRef<number> {
+    const dialogRef = new DialogRef<number>(
+        <DeleteUserDialog
+            user={user}
+            onClose={result => dialogRef.closeDialog(result)}
+        />);
 
     return this.openDialog(dialogRef);
   }

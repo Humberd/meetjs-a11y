@@ -49,7 +49,10 @@ export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title})
         </h2>
 
         <button
-            className="app-button only-icon" onClick={() => onClose()} type="button"
+            className="app-button only-icon"
+            onClick={() => onClose()}
+            type="button"
+            title="Close dialog"
         >
           <FaTimes/>
         </button>
@@ -77,7 +80,12 @@ export interface DialogFooterProps<T> {
 export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, submitLabel}) => {
   return (
       <footer className="DialogFooter">
-        <button className="app-button close" onClick={() => onClose()} type="button">
+        <button
+            className="app-button close"
+            onClick={() => onClose()}
+            type="button"
+            title="Close dialog"
+        >
           Close
         </button>
         <button className="app-button" type="submit">

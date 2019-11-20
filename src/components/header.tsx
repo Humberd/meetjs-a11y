@@ -13,7 +13,7 @@ export const AppHeader: React.FC = () => {
 
     ref.addOnCloseListener(result => {
       if (!result) {
-        return
+        return;
       }
 
       usersService.addUser(result);

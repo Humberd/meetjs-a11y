@@ -9,7 +9,7 @@ export const AppHeader: React.FC = () => {
   const dialogsService = useContext(DialogsContext);
 
   const openModal = () => {
-    const ref = dialogsService.openCreateDialog();
+    const ref = dialogsService.openCreateUserDialog();
 
     ref.addOnCloseListener(result => {
       console.log({result});

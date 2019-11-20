@@ -2,14 +2,25 @@ import React, { ReactElement } from 'react';
 import { observable } from 'mobx';
 import { GlobalAnnouncer } from './announcer.service';
 import { CreateUserDialog } from '../components/dialogs/create-user-dialog';
-import { NewUser } from '../models';
+import { NewUser, User } from '../models';
 
 export class DialogsService {
   @observable
   dialogRef: DialogRef<any> | null = null;
 
-  openCreateDialog(): DialogRef<NewUser> {
+  openCreateUserDialog(): DialogRef<NewUser> {
     const dialogRef = new DialogRef<NewUser>(<CreateUserDialog onClose={result => dialogRef.closeDialog(result)}/>);
+
+    return this.openDialog(dialogRef);
+  }
+
+  openEditUserDialog(user: User): DialogRef<User> {
+    const dialogRef = new DialogRef<User>(<CreateUserDialog onClose={result => {
+      if (!result) {
+        return dialogRef.closeDialog()
+      }
+      return dialogRef.closeDialog({...result, id: user.id});
+    }}/>);
 
     return this.openDialog(dialogRef);
   }

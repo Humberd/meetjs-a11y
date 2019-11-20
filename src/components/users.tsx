@@ -56,7 +56,7 @@ export const UserItem: React.FC<UserItemProps> = observer(({user}) => {
   };
 
   return (
-      <div className="UserListItem">
+      <div className={`UserListItem ${!user.isActive && 'inactive'}`}>
         <Avatar src={user.avatar}/>
         <span>{user.name}</span>
 

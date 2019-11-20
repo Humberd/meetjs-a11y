@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { UsersContext } from '../services/users.service';
 import { observer } from 'mobx-react';
 
-export const SearchBar: React.FC = observer(({}) => {
+export const SearchBar: React.FC = observer(() => {
   const usersService = useContext(UsersContext);
 
   return (

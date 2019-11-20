@@ -40,4 +40,9 @@ body {
   &:not(.only-icon) svg {
     margin-left: 10px;
   }
+
+  &:hover,
+  &:focus {
+    background-color: #9cc3d1;
+  }
 }

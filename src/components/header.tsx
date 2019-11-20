@@ -13,6 +13,7 @@ export const AppHeader: React.FC = () => {
     const ref = dialogsService.openCreateDialog();
 
     ref.addOnCloseListener(result => {
+      console.log({result});
       if (!result) {
         return
       }

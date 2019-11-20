@@ -1,32 +1,23 @@
 import React, { ReactElement } from 'react';
 import { observable } from 'mobx';
-import { Dialog } from '../components/dialog';
 import { GlobalAnnouncer } from './announcer.service';
+import { CreateUserDialog } from '../components/dialogs/create-user-dialog';
+import { NewUser } from '../models';
 
 export class DialogsService {
   @observable
   dialogRef: DialogRef<any> | null = null;
 
-  openCreateDialog() {
-    const dialogRef = new DialogRef(<Dialog
-        title="Add User"
-        onClose={() => dialogRef.closeDialog()}
-    >
-      <button
-          className="app-button"
-          onClick={() => dialogRef.closeDialog()}
-      >
-        Close
-      </button>
-      <button className="app-button">
-        Create
-      </button>
+  openCreateDialog(): DialogRef<NewUser> {
+    const dialogRef = new DialogRef<NewUser>(<CreateUserDialog onClose={result => dialogRef.closeDialog(result)}/>);
 
-    </Dialog>);
+    return this.openDialog(dialogRef);
+  }
 
+  private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
     dialogRef.addOnCloseListener(() => {
       this.dialogRef = null;
-      GlobalAnnouncer.announce("Dialog closed")
+      GlobalAnnouncer.announce('Dialog closed');
     });
     GlobalAnnouncer.announce('Dialog opened');
 

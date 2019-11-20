@@ -11,10 +11,41 @@
 	justify-content: center;
 }
 
+$dialog-side-margin: 20px;
+
 .AppDialog {
 	width: 400px;
 	height: 300px;
 	margin-top: -200px;
+	padding-bottom: 20px;
 
 	background-color: #efefef;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.DialogHeader {
+	margin: 0 $dialog-side-margin;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.DialogContent {
+	margin: 0 $dialog-side-margin;
+
+	flex: 1;
+}
+
+.DialogFooter {
+	margin: 0 $dialog-side-margin;
+
+	display: flex;
+	justify-content: flex-end;
+
+	.close {
+		margin-right: 10px;
+	}
 }

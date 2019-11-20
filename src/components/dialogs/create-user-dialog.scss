@@ -2,5 +2,20 @@
 	.content {
 		display: flex;
 		flex-direction: column;
+
+		.row {
+			margin: 10px 0;
+
+			display: flex;
+			align-items: center;
+
+			span {
+				margin-right: 15px;
+			}
+
+			.avatar {
+				margin-left: 15px;
+			}
+		}
 	}
 }

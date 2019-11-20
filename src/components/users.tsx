@@ -4,6 +4,7 @@ import { FaEllipsisH } from 'react-icons/all';
 import './users.scss';
 import { UsersContext } from '../services/users.service';
 import { observer } from 'mobx-react';
+import { Avatar } from './avatar';
 
 export const UsersList = observer(() => {
   const users = useContext(UsersContext);
@@ -26,11 +27,7 @@ export interface UserItemProps {
 export const UserItem: React.FC<UserItemProps> = ({user}) => {
   return (
       <div className="UserListItem">
-        <img
-            className="avatar"
-            src={user.avatar}
-            alt="user avatar"
-        />
+        <Avatar src={user.avatar}/>
         <span>{user.name}</span>
         <button className="app-button only-icon options">
           <FaEllipsisH/>

@@ -6,11 +6,13 @@ export const SearchBar: React.FC = observer(() => {
   const usersService = useContext(UsersContext);
 
   return (
-      <input
-          type="text"
-          placeholder="Search"
-          value={usersService.searchQuery}
-          onChange={event => usersService.filterUsers(event.target.value)}
-      />
+      <form role="search" aria-label="Users">
+        <input
+            type="search"
+            placeholder="Search"
+            value={usersService.searchQuery}
+            onChange={event => usersService.filterUsers(event.target.value)}
+        />
+      </form>
   );
 });

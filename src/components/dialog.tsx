@@ -21,7 +21,8 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
           <div
               className="AppDialog"
               role="dialog"
-              aria-labelledby="DialogHeader"
+              aria-modal="true"
+              aria-labelledby="DialogTitle"
               aria-describedby="DialogContent"
               onClick={event => event.stopPropagation()}
           >
@@ -45,8 +46,8 @@ export interface DialogHeaderProps<T> {
 
 export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title}) => {
   return (
-      <header className="DialogHeader" id="DialogHeader">
-        <h2 className="dialogTitle">
+      <header className="DialogHeader">
+        <h2 className="dialogTitle" id="DialogTitle">
           {title}
         </h2>
 

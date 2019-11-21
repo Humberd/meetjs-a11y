@@ -21,6 +21,8 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
           <div
               className="AppDialog"
               role="dialog"
+              aria-labelledby="DialogHeader"
+              aria-describedby="DialogContent"
               onClick={event => event.stopPropagation()}
           >
             {children}
@@ -43,7 +45,7 @@ export interface DialogHeaderProps<T> {
 
 export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title}) => {
   return (
-      <header className="DialogHeader">
+      <header className="DialogHeader" id="DialogHeader">
         <h2 className="dialogTitle">
           {title}
         </h2>
@@ -66,7 +68,7 @@ export interface DialogContentProps {
 
 export const DialogContent: React.FC<DialogContentProps> = ({className, children}) => {
   return (
-      <section className={className + ' DialogContent'}>
+      <section className={className + ' DialogContent'} id="DialogContent">
         {children}
       </section>
   );

@@ -11,9 +11,9 @@ export const UsersList = observer(() => {
   const users = useContext(UsersContext);
 
   return (
-      <ul className="UsersList">
+      <ul className="UsersList" aria-label="Users list">
         {users.users.length > 0 && users.users.map(user => (
-            <li key={user.id}>
+            <li key={user.id} aria-label="user">
               <UserItem user={user}/>
             </li>
         ))}

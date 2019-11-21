@@ -29,9 +29,10 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
   };
 
   return (
-      <form className="CreateUserDialogForm" onSubmit={handleSubmit(onSubmit)}>
-        <Dialog onClose={onClose}>
-          <DialogHeader title={title} onClose={onClose}/>
+      <Dialog onClose={onClose}>
+        <DialogHeader title={title} onClose={onClose}/>
+
+        <form className="CreateUserDialogForm" onSubmit={handleSubmit(onSubmit)}>
 
           <DialogContent className="content">
             <label className="row">
@@ -44,7 +45,7 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
               <select name="avatar" ref={register}>
                 <option/>
                 {USER_AVATARS.map((url, index) => (
-                    <option key={url} value={url}>{index}</option>
+                    <option key={url} value={url}>{index + 1}</option>
                 ))}
               </select>
 
@@ -60,8 +61,9 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
           </DialogContent>
 
           <DialogFooter submitLabel={submitLabel} onClose={onClose}/>
-        </Dialog>
-      </form>
+        </form>
+
+      </Dialog>
 
   );
 };

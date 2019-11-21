@@ -27,6 +27,7 @@ export const AppHeader: React.FC = () => {
         <button
             className="app-button new"
             onClick={openDialog}
+            aria-label="Create new user"
         >
           New
           <FaPlus/>

@@ -10,9 +10,10 @@ export interface DeleteUserDialogProps<T> {
 
 export const DeleteUserDialog: React.FC<DeleteUserDialogProps<number>> = ({onClose, user}) => {
   return (
-      <form onSubmit={event => onClose(user.id)}>
-        <Dialog onClose={onClose}>
-          <DialogHeader title="Delete User" onClose={onClose}/>
+      <Dialog onClose={onClose}>
+        <DialogHeader title="Delete User" onClose={onClose}/>
+
+        <form onSubmit={() => onClose(user.id)}>
 
           <DialogContent className="content">
             <p>
@@ -21,7 +22,9 @@ export const DeleteUserDialog: React.FC<DeleteUserDialogProps<number>> = ({onClo
           </DialogContent>
 
           <DialogFooter submitLabel="Delete" onClose={onClose}/>
-        </Dialog>
-      </form>
+
+        </form>
+
+      </Dialog>
   );
 };

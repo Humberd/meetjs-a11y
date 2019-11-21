@@ -6,6 +6,7 @@ import { UsersContext } from '../services/users.service';
 import { observer } from 'mobx-react';
 import { Avatar } from './avatar';
 import { DialogsContext } from '../services/dialogs.service';
+import { AnnouncerContext } from '../services/announcer.service';
 
 export const UsersList = observer(() => {
   const users = useContext(UsersContext);
@@ -34,6 +35,7 @@ export interface UserItemProps {
 export const UserItem: React.FC<UserItemProps> = observer(({user}) => {
   const usersService = useContext(UsersContext);
   const dialogsService = useContext(DialogsContext);
+  const announcerService = useContext(AnnouncerContext);
 
   const onUpdateUser = () => {
     const ref = dialogsService.openEditUserDialog(user);
@@ -52,6 +54,7 @@ export const UserItem: React.FC<UserItemProps> = observer(({user}) => {
         return;
       }
       usersService.deleteUser(user.id);
+      announcerService.announce(`User ${user.name} has been deleted.`)
     });
   };
 

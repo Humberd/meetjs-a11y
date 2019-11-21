@@ -77,10 +77,11 @@ export const DialogContent: React.FC<DialogContentProps> = ({className, children
 
 export interface DialogFooterProps<T> {
   submitLabel: string;
+  submitAriaLabel?: string;
   onClose: OnCloseListener<T>;
 }
 
-export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, submitLabel}) => {
+export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, submitLabel, submitAriaLabel}) => {
   return (
       <footer className="DialogFooter">
         <button
@@ -91,7 +92,7 @@ export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, submitL
         >
           Close
         </button>
-        <button className="app-button" type="submit">
+        <button className="app-button" type="submit" aria-label={submitAriaLabel}>
           {submitLabel}
         </button>
       </footer>

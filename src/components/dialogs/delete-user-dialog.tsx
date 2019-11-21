@@ -21,7 +21,7 @@ export const DeleteUserDialog: React.FC<DeleteUserDialogProps<number>> = ({onClo
             </p>
           </DialogContent>
 
-          <DialogFooter submitLabel="Delete" onClose={onClose}/>
+          <DialogFooter submitLabel="Delete" submitAriaLabel={`Delete ${user.name}`} onClose={onClose}/>
 
         </form>
 

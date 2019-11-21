@@ -23,7 +23,6 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
               role="dialog"
               aria-modal="true"
               aria-labelledby="DialogTitle"
-              aria-describedby="DialogContent"
               onClick={event => event.stopPropagation()}
           >
             {children}
@@ -69,7 +68,7 @@ export interface DialogContentProps {
 
 export const DialogContent: React.FC<DialogContentProps> = ({className, children}) => {
   return (
-      <section className={className + ' DialogContent'} id="DialogContent">
+      <section className={className + ' DialogContent'}>
         {children}
       </section>
   );

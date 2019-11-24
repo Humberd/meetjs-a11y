@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import { UsersHeader } from './components/users-header';
-import { UsersList } from './components/users';
+import { UsersTable } from './components/users';
 import { DialogsContext } from './services/dialogs.service';
 import { observer } from 'mobx-react';
 import { AnnouncerContext } from './services/announcer.service';
@@ -17,7 +17,7 @@ const App: React.FC = observer(() => {
         <AppHeader/>
         <main className="App">
           <UsersHeader/>
-          <UsersList/>
+          <UsersTable/>
           <div className="visually-hidden" aria-live="polite">
             {text}
           </div>

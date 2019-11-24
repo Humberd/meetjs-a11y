@@ -6,36 +6,37 @@ import { UsersContext } from '../services/users.service';
 import { observer } from 'mobx-react';
 import { Avatar } from './avatar';
 import { DialogsContext } from '../services/dialogs.service';
-import { AnnouncerContext } from '../services/announcer.service';
 
-export const UsersList = observer(() => {
-  const users = useContext(UsersContext);
+export const UsersTable = observer(() => {
+  const {users} = useContext(UsersContext);
 
   return (
-      <ul className="UsersList" aria-label="Users list">
-        {users.users.length > 0 && users.users.map(user => (
-            <li key={user.id} aria-label="user">
-              <UserItem user={user}/>
-            </li>
+      <table className="UsersTable top-level-container">
+        <thead>
+        <tr>
+          <td/>
+          <td/>
+          <td className="name">Name</td>
+          <td className="actions">Actions</td>
+        </tr>
+        </thead>
+        <tbody>
+        {users.map((user, index) => (
+            <UserRow key={user.id} user={user} index={index}/>
         ))}
-
-        {users.users.length === 0 &&
-        <p className="no-results">
-          No results
-        </p>
-        }
-      </ul>
+        </tbody>
+      </table>
   );
 });
 
 export interface UserItemProps {
-  user: User
+  user: User,
+  index: number
 }
 
-export const UserItem: React.FC<UserItemProps> = observer(({user}) => {
+export const UserRow: React.FC<UserItemProps> = observer(({user, index}) => {
   const usersService = useContext(UsersContext);
   const dialogsService = useContext(DialogsContext);
-  const announcerService = useContext(AnnouncerContext);
 
   const onUpdateUser = () => {
     const ref = dialogsService.openEditUserDialog(user);
@@ -54,31 +55,35 @@ export const UserItem: React.FC<UserItemProps> = observer(({user}) => {
         return;
       }
       usersService.deleteUser(user.id);
-      announcerService.announce(`User ${user.name} has been deleted.`)
     });
   };
 
   return (
-      <div className={`UserListItem ${!user.isActive && 'inactive'}`}>
-        <Avatar src={user.avatar}/>
-        <span>{user.name}</span>
+      <tr>
+        <td><span className="counter">{index + 1}.</span></td>
+        <td><Avatar src={user.avatar}/></td>
+        <td>
+          <h3>{user.name}</h3>
+        </td>
 
-        <section className="actions">
-          <button
-              className="app-button only-icon edit"
-              title="Edit user"
-              onClick={onUpdateUser}
-          >
-            <FaEdit/>
-          </button>
-          <button
-              className="app-button only-icon delete"
-              title="Delete user"
-              onClick={onDeleteUser}
-          >
-            <FaTrash/>
-          </button>
-        </section>
-      </div>
+        <td>
+          <div className="actions">
+            <button
+                className="app-button only-icon edit"
+                title="Edit user"
+                onClick={onUpdateUser}
+            >
+              <FaEdit/>
+            </button>
+            <button
+                className="app-button only-icon delete"
+                title="Delete user"
+                onClick={onDeleteUser}
+            >
+              <FaTrash/>
+            </button>
+          </div>
+        </td>
+      </tr>
   );
 });

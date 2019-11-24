@@ -1,34 +1,45 @@
-.UsersList {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+$border: 1px solid #DFE2F7;
 
-	.no-results {
-		margin: 50px 0;
-		text-align: center;
+.UsersTable {
+	background-color: #fff;
+	border: $border;
+	width: 100%;
+
+	thead > tr > td,
+	tbody > tr:not(:last-child) > td {
+		border-bottom: $border;
 	}
-}
 
-.UserListItem {
-	display: flex;
-	align-items: center;
-	padding: 10px 0;
-	margin: 10px 0;
+	thead > tr > td {
+		padding-top: 30px;
+		padding-bottom: 18px;
+		font-weight: 600;
+		font-size: 18px;
+		color: #676A7A;
 
-	&.inactive {
-		opacity: 0.5;
+		&.name {
+			width: 100%;
+		}
 
-		&:hover,
-		&:focus-within{
-			opacity: 1;
+		&.actions {
+			padding-left: 15px;
 		}
 	}
 
-	.actions {
-		margin-left: auto;
+	tbody > tr > td {
+		height: 100px;
 
-		.edit {
-			margin-right: 10px;
+		.counter {
+			font-weight: 600;
+			font-size: 18px;
+			color: #676A7A;
+			margin-left: 36px;
+			margin-right: 20px;
+		}
+
+		.actions {
+			display: flex;
+			margin-right: 36px;
 		}
 	}
 }

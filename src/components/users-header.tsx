@@ -22,15 +22,18 @@ export const UsersHeader: React.FC = () => {
 
   return (
       <header className="UsersHeader">
-        <h2>Users</h2>
+        <h1 className="title">
+          Users
+          <span> ({usersService.users.length}) </span>
+        </h1>
 
         <button
-            className="app-button new"
+            className="app-button success new"
             onClick={openDialog}
             aria-label="Create new user"
         >
-          New
           <FaPlus/>
+          New
         </button>
       </header>
   );

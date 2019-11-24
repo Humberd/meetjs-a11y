@@ -1,6 +1,16 @@
 .UsersHeader {
+	margin: 20px 0 20px 32px;
+
 	display: flex;
 	align-items: center;
+
+	.title {
+
+		span {
+			color: #676A7A;
+			font-weight: 400;
+		}
+	}
 
 	.new {
 		margin-left: auto;

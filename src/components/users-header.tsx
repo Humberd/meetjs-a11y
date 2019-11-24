@@ -5,7 +5,7 @@ import { UsersContext } from '../services/users.service';
 import { DialogsContext } from '../services/dialogs.service';
 
 export const UsersHeader: React.FC = () => {
-  const usersService = useContext(UsersContext);
+  const {users, addUser} = useContext(UsersContext);
   const dialogsService = useContext(DialogsContext);
 
   const openDialog = () => {
@@ -16,7 +16,7 @@ export const UsersHeader: React.FC = () => {
         return;
       }
 
-      usersService.addUser(result);
+      addUser(result);
     });
   };
 
@@ -24,7 +24,7 @@ export const UsersHeader: React.FC = () => {
       <section className="UsersHeader">
         <h1 className="title">
           Users
-          <span> ({usersService.users.length}) </span>
+          <span> ({users.length}) </span>
         </h1>
 
         <button

@@ -70,3 +70,4 @@ strony przez niepełnosprawnych.
 https://www.digitala11y.com/accessibility-plug-ins-ie-chrome-firefox-browsers/ -a11y browser extensions
 https://www.w3.org/TR/wai-aria-practices/examples/landmarks/navigation.html - aria components
 https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role - dialog
+https://support.microsoft.com/en-us/help/22806/windows-10-narrator-keyboard-commands-touch-gestures

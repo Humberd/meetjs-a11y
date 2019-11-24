@@ -1,4 +1,9 @@
 .AppFooter {
 	padding: 20px 25px;
 	margin-top: 10px;
+
+	span:not(:last-child)::after {
+		margin: 0 15px;
+		content: '•';
+	}
 }

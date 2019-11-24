@@ -21,7 +21,7 @@ export const UsersHeader: React.FC = () => {
   };
 
   return (
-      <header className="UsersHeader">
+      <section className="UsersHeader">
         <h1 className="title">
           Users
           <span> ({usersService.users.length}) </span>
@@ -35,6 +35,6 @@ export const UsersHeader: React.FC = () => {
           <FaPlus/>
           New
         </button>
-      </header>
+      </section>
   );
 };

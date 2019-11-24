@@ -9,7 +9,7 @@ export class AnnouncerService {
   @observable
   politeness: Politeness = 'polite';
 
-  announce(text: string, politeness: Politeness = 'assertive') {
+  announce(text: string, politeness: Politeness = 'polite') {
     this.text = text;
     this.politeness = politeness
   }

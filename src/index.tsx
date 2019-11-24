@@ -6,20 +6,21 @@ import { UsersList } from './components/users';
 import { DialogsContext } from './services/dialogs.service';
 import { observer } from 'mobx-react';
 import { AnnouncerContext } from './services/announcer.service';
-import Announcer from 'react-a11y-announcer';
 import { SearchBar } from './components/search-bar';
 
 const App: React.FC = observer(() => {
-  const dialogsService = useContext(DialogsContext);
-  const announcerService = useContext(AnnouncerContext);
+  const {dialogRef} = useContext(DialogsContext);
+  const {politeness, text} = useContext(AnnouncerContext);
 
   return (
       <main className="App">
         <AppHeader/>
         <SearchBar/>
         <UsersList/>
-        <Announcer text={announcerService.text}/>
-        {dialogsService.dialogRef && dialogsService.dialogRef.elem}
+        <div className="visually-hidden" aria-live={politeness}>
+          {text}
+        </div>
+        {dialogRef && dialogRef.elem}
       </main>
   );
 });

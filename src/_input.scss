@@ -1,0 +1,34 @@
+input[type="checkbox"] {
+	-webkit-appearance: none; /* Hides the default checkbox style */
+	height: 2em;
+	width: 2em;
+	cursor: pointer;
+	position: relative;
+	-webkit-transition: .15s;
+	border-radius: 2em;
+	background-color: #900;
+}
+
+input[type="checkbox"]:checked {
+	background-color:green;
+}
+
+input[type="checkbox"]:before, input[type="checkbox"]:checked:before {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	line-height:2em;
+	text-align:center;
+	color:#fff;
+	content: '✘';
+}
+
+input[type="checkbox"]:checked:before {
+	content: '✔';
+}
+
+input[type="checkbox"]:hover:before {
+	background:rgba(255,255,255,0.3);
+}

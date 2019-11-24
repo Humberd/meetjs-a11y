@@ -7,6 +7,7 @@ import { DialogsContext } from './services/dialogs.service';
 import { observer } from 'mobx-react';
 import { AnnouncerContext } from './services/announcer.service';
 import { AppHeader } from './components/app/app-header';
+import { AppFooter } from './components/app/app-footer';
 
 const App: React.FC = observer(() => {
   const {dialogRef} = useContext(DialogsContext);
@@ -23,6 +24,7 @@ const App: React.FC = observer(() => {
           </div>
           {dialogRef && dialogRef.elem}
         </main>
+        <AppFooter/>
       </>
   );
 });

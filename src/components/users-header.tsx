@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { FaPlus } from 'react-icons/fa';
-import './header.scss';
+import './users-header.scss';
 import { UsersContext } from '../services/users.service';
 import { DialogsContext } from '../services/dialogs.service';
 
-export const AppHeader: React.FC = () => {
+export const UsersHeader: React.FC = () => {
   const usersService = useContext(UsersContext);
   const dialogsService = useContext(DialogsContext);
 
@@ -21,7 +21,7 @@ export const AppHeader: React.FC = () => {
   };
 
   return (
-      <header className="AppHeader">
+      <header className="UsersHeader">
         <h2>Users</h2>
 
         <button

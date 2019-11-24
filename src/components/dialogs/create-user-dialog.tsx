@@ -16,7 +16,7 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
   const title = existingUser ? 'Edit User' : 'Create User';
   const submitLabel = existingUser ? 'Save' : 'Create';
 
-  const {register, handleSubmit, watch} = useForm({
+  const {register, handleSubmit, watch, errors} = useForm({
     defaultValues: existingUser && {
       name: existingUser.name,
       avatar: existingUser.avatar,
@@ -37,7 +37,18 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
           <DialogContent className="content">
             <label className="row">
               <span>Name</span>
-              <input name="name" type="text" ref={register}/>
+              <input
+                  name="name"
+                  type="text"
+                  aria-invalid={!!errors.name}
+                  aria-describedby="error-name-required"
+                  ref={register({required: true})}
+              />
+              {errors.name && errors.name.type === 'required' && (
+                  <span role="alert" id="error-name-required" className="error-message">
+                    This field is required
+                  </span>
+              )}
             </label>
 
             <label className="row">

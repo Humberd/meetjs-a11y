@@ -14,10 +14,10 @@ export const UsersTable = observer(() => {
       <table className="UsersTable top-level-container">
         <thead>
         <tr>
-          <td/>
-          <td/>
-          <td className="name">Name</td>
-          <td className="actions">Actions</td>
+          <th/>
+          <th/>
+          <th className="name">Name</th>
+          <th className="actions">Actions</th>
         </tr>
         </thead>
         <tbody>

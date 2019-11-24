@@ -5,17 +5,18 @@ $border: 1px solid #DFE2F7;
 	border: $border;
 	width: 100%;
 
-	thead > tr > td,
+	thead > tr > th,
 	tbody > tr:not(:last-child) > td {
 		border-bottom: $border;
 	}
 
-	thead > tr > td {
+	thead > tr > th {
 		padding-top: 30px;
 		padding-bottom: 18px;
 		font-weight: 600;
 		font-size: 18px;
 		color: #676A7A;
+		text-align: left;
 
 		&.name {
 			width: 100%;

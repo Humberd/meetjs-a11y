@@ -10,14 +10,14 @@ import { SearchBar } from './components/search-bar';
 
 const App: React.FC = observer(() => {
   const {dialogRef} = useContext(DialogsContext);
-  const {politeness, text} = useContext(AnnouncerContext);
+  const {text} = useContext(AnnouncerContext);
 
   return (
       <main className="App">
         <AppHeader/>
         <SearchBar/>
         <UsersList/>
-        <div className="visually-hidden" aria-live={politeness}>
+        <div className="visually-hidden" aria-live="polite">
           {text}
         </div>
         {dialogRef && dialogRef.elem}

@@ -92,7 +92,7 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 
 ### 4. Focus Trap
 
-1. `dialog.tsx`: Dodac Focus Trap
+1. `dialog.tsx`: Dodać Focus Trap
 ```html
 <FocusTrap
     focusTrapOptions={{
@@ -101,12 +101,39 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 >
   <div
       className="AppDialog top-level-container"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="DialogTitle"
       onClick={event => event.stopPropagation()}
   >
     {children}
   </div>
 </FocusTrap>
+```
+
+2. `dialog.tsx`: Dodać dialog id
+
+```html
+<h2 className="dialogTitle" id="DialogTitle">
+  {title}
+</h2>
+```
+
+```html
+<div
+    className="AppDialog top-level-container"
+    aria-labelledby="DialogTitle" <-- dodać to
+    onClick={event => event.stopPropagation()}
+>
+  {children}
+</div>
+```
+
+3. `dialog.tsx`: Dodać role do dialogu
+```html
+<div
+    className="AppDialog top-level-container"
+    role="dialog" <-- dodać to
+    aria-labelledby="DialogTitle" 
+    onClick={event => event.stopPropagation()}
+>
+  {children}
+</div>
 ```

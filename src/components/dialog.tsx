@@ -14,9 +14,6 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
       <div className="AppDialog--Backdrop" onClick={() => onClose()}>
         <div
             className="AppDialog top-level-container"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="DialogTitle"
             onClick={event => event.stopPropagation()}
         >
           {children}
@@ -24,12 +21,6 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
       </div>
   );
 };
-
-function listenForEscKey(onClose: () => any) {
-  const listener = (ev: KeyboardEvent) => ev.key === 'Escape' && onClose();
-  document.addEventListener('keydown', listener);
-  return () => document.removeEventListener('keydown', listener);
-}
 
 export interface DialogHeaderProps<T> {
   title: string;
@@ -39,7 +30,7 @@ export interface DialogHeaderProps<T> {
 export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title}) => {
   return (
       <header className="DialogHeader">
-        <h2 className="dialogTitle" id="DialogTitle">
+        <h2 className="dialogTitle">
           {title}
         </h2>
 
@@ -54,6 +45,12 @@ export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title})
       </header>
   );
 };
+
+function listenForEscKey(onClose: () => any) {
+  const listener = (ev: KeyboardEvent) => ev.key === 'Escape' && onClose();
+  document.addEventListener('keydown', listener);
+  return () => document.removeEventListener('keydown', listener);
+}
 
 export interface DialogContentProps {
   className?: string

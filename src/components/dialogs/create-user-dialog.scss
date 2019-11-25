@@ -7,10 +7,14 @@
 			margin: 10px 0;
 
 			display: flex;
-			align-items: center;
+			flex-direction: column;
+			justify-content: flex-start;
 
 			span {
-				margin-right: 15px;
+				margin-bottom: 7px;
+				font-weight: 600;
+				font-size: 18px;
+				color: #676A7A;
 			}
 
 			.avatar {
@@ -19,7 +23,8 @@
 
 			.error-message {
 				color: #970000;
-				font-size: 14px;
+				margin-top: 10px;
+				font-size: 15px;
 			}
 		}
 	}

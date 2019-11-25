@@ -19,7 +19,7 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
             }}
         >
           <div
-              className="AppDialog"
+              className="AppDialog top-level-container"
               role="dialog"
               aria-modal="true"
               aria-labelledby="DialogTitle"
@@ -75,25 +75,22 @@ export const DialogContent: React.FC<DialogContentProps> = ({className, children
 };
 
 export interface DialogFooterProps<T> {
-  submitLabel: string;
-  submitAriaLabel?: string;
   onClose: OnCloseListener<T>;
 }
 
-export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, submitLabel, submitAriaLabel}) => {
+export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, children}) => {
   return (
       <footer className="DialogFooter">
         <button
-            className="app-button close"
+            className="app-button neutral close"
             onClick={() => onClose()}
             type="button"
             title="Close dialog"
         >
-          Close
+          <FaTimes/>
+          Cancel
         </button>
-        <button className="app-button" type="submit" aria-label={submitAriaLabel}>
-          {submitLabel}
-        </button>
+        {children}
       </footer>
   );
 };

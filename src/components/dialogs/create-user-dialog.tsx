@@ -6,6 +6,7 @@ import useForm from 'react-hook-form';
 import './create-user-dialog.scss';
 import { USER_AVATARS } from '../../services/users.service';
 import { Avatar } from '../avatar';
+import { FaPlus } from 'react-icons/all';
 
 export interface CreateUserDialogProps<T> {
   onClose: OnCloseListener<T>,
@@ -72,7 +73,13 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
 
           </DialogContent>
 
-          <DialogFooter submitLabel={submitLabel} onClose={onClose}/>
+          <DialogFooter onClose={onClose}>
+            <button className="app-button success">
+              <FaPlus/>
+              {submitLabel}
+            </button>
+          </DialogFooter>
+
         </form>
 
       </Dialog>

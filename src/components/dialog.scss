@@ -11,15 +11,12 @@
 	justify-content: center;
 }
 
-$dialog-side-margin: 20px;
-
 .AppDialog {
-	width: 400px;
-	height: 300px;
+	width: 700px;
 	margin-top: -200px;
-	padding-bottom: 20px;
+	padding: 30px 50px;
 
-	background-color: #efefef;
+	background-color: #F5F6FF;
 
 	display: flex;
 	flex-direction: column;
@@ -33,7 +30,7 @@ $dialog-side-margin: 20px;
 }
 
 .DialogHeader {
-	margin: 0 $dialog-side-margin;
+	margin-bottom: 20px;
 
 	display: flex;
 	justify-content: space-between;
@@ -41,13 +38,12 @@ $dialog-side-margin: 20px;
 }
 
 .DialogContent {
-	margin: 0 $dialog-side-margin;
 
 	flex: 1;
 }
 
 .DialogFooter {
-	margin: 0 $dialog-side-margin;
+	margin-top: 20px;
 
 	display: flex;
 	justify-content: flex-end;

@@ -19,7 +19,20 @@
 
 		&:hover,
 		&:focus {
-			background-color: #25838f;
+			background-color: #225f6b;
+		}
+	}
+
+	&.neutral {
+		background-color: transparent;
+		color: #000;
+		border: 1px solid #000;
+		border-radius: 9px;
+
+		&:hover,
+		&:focus {
+			color: #ffffff;
+			background-color: #000;
 		}
 	}
 	

@@ -108,7 +108,7 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 </FocusTrap>
 ```
 
-2. `dialog.tsx`: Dodać dialog id
+2. `dialog.tsx`: Dodać dialog id oraz ria-labelledby
 
 ```html
 <h2 className="dialogTitle" id="DialogTitle">
@@ -137,3 +137,8 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
   {children}
 </div>
 ```
+
+### 5. Formularz
+
+1. `create-user-dialog.tsx`: Zamienic `<div className="row">` na `<label className="row">`
+

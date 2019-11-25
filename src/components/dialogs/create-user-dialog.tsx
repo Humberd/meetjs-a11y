@@ -42,7 +42,7 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
             </section>
 
             <section className="form-content">
-              <label className="row">
+              <div className="row">
                 <span>Name</span>
                 <input
                     name="name"
@@ -57,9 +57,9 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                       This field is required
                     </span>
                 )}
-              </label>
+              </div>
 
-              <label className="row avatar">
+              <div className="row avatar">
                 <span>Avatar</span>
                 <select name="avatar" ref={register}>
                   <option/>
@@ -67,12 +67,12 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                       <option key={url} value={url}>{index + 1}</option>
                   ))}
                 </select>
-              </label>
+              </div>
 
-              <label className="row is-active">
+              <div className="row is-active">
                 <input name="isActive" type="checkbox" ref={register}/>
                 <span>Is active</span>
-              </label>
+              </div>
             </section>
 
           </DialogContent>

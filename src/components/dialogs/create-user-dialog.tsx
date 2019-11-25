@@ -36,40 +36,44 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
         <form className="CreateUserDialogForm" onSubmit={handleSubmit(onSubmit)}>
 
           <DialogContent className="content">
-            <label className="row">
-              <span>Name</span>
-              <input
-                  name="name"
-                  type="text"
-                  aria-invalid={!!errors.name}
-                  aria-describedby="error-name-required"
-                  ref={register({required: true})}
-                  aria-required={true}
-              />
-              {errors.name && errors.name.type === 'required' && (
-                  <span role="alert" id="error-name-required" className="error-message">
-                    This field is required
-                  </span>
-              )}
-            </label>
 
-            <label className="row">
-              <span>Avatar</span>
-              <select name="avatar" ref={register}>
-                <option/>
-                {USER_AVATARS.map((url, index) => (
-                    <option key={url} value={url}>{index + 1}</option>
-                ))}
-              </select>
-
+            <section className="preview">
               <Avatar src={watch('avatar')} className="avatar"/>
-            </label>
+            </section>
 
-            <label className="row">
-              <span>Is active</span>
-              <input name="isActive" type="checkbox" ref={register}/>
-            </label>
+            <section className="form-content">
+              <label className="row">
+                <span>Name</span>
+                <input
+                    name="name"
+                    type="text"
+                    aria-invalid={!!errors.name}
+                    aria-describedby="error-name-required"
+                    ref={register({required: true})}
+                    aria-required={true}
+                />
+                {errors.name && errors.name.type === 'required' && (
+                    <span role="alert" id="error-name-required" className="error-message">
+                      This field is required
+                    </span>
+                )}
+              </label>
 
+              <label className="row">
+                <span>Avatar</span>
+                <select name="avatar" ref={register}>
+                  <option/>
+                  {USER_AVATARS.map((url, index) => (
+                      <option key={url} value={url}>{index + 1}</option>
+                  ))}
+                </select>
+              </label>
+
+              <label className="row horizontal">
+                <input name="isActive" type="checkbox" ref={register}/>
+                <span>Is active</span>
+              </label>
+            </section>
 
           </DialogContent>
 

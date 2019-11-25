@@ -1,31 +1,62 @@
 .CreateUserDialogForm {
 	.content {
 		display: flex;
+
+		.form-content {
+			flex: 1;
+		}
+	}
+
+	.preview {
+		border: 1px solid #E7E9F9;
+		border-radius: 13px;
+		margin-top: 50px;
+		margin-right: 60px;
+		padding: 40px;
+		background-color: #fff;
+
+		align-self: flex-start;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.avatar {
+			width: 120px;
+			height: 120px;
+		}
+	}
+
+
+	.row {
+		margin: 20px 0;
+
+		display: flex;
 		flex-direction: column;
+		justify-content: flex-start;
+		width: 100%;
 
-		.row {
-			margin: 10px 0;
-
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
+		&.horizontal {
+			flex-direction: row;
+			align-items: center;
 
 			span {
-				margin-bottom: 7px;
-				font-weight: 600;
-				font-size: 18px;
-				color: #676A7A;
+				margin-bottom: 0;
+				margin-left: 10px;
 			}
+		}
 
-			.avatar {
-				margin-left: 15px;
-			}
+		span {
+			margin-bottom: 7px;
+			font-weight: 600;
+			font-size: 18px;
+			color: #676A7A;
+		}
 
-			.error-message {
-				color: #970000;
-				margin-top: 10px;
-				font-size: 15px;
-			}
+		.error-message {
+			color: #970000;
+			margin-top: 10px;
+			font-size: 15px;
 		}
 	}
 }
+

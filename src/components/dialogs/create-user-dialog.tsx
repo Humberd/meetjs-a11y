@@ -42,21 +42,23 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
             </section>
 
             <section className="form-content">
-              <div className="row">
+              <label className="row">
                 <span>Name</span>
                 <input
                     name="name"
                     type="text"
+                    aria-required={true}
+                    aria-invalid={!!errors.name}
                     ref={register({required: true})}
                 />
-                {errors.name && errors.name.type === 'required' && (
-                    <span className="error-message">
-                      This field is required
-                    </span>
-                )}
-              </div>
+              </label>
+              {errors.name && errors.name.type === 'required' && (
+                  <p className="error-message">
+                    This field is required
+                  </p>
+              )}
 
-              <div className="row avatar">
+              <label className="row avatar">
                 <span>Avatar</span>
                 <select name="avatar" ref={register}>
                   <option/>
@@ -64,12 +66,12 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                       <option key={url} value={url}>{index + 1}</option>
                   ))}
                 </select>
-              </div>
+              </label>
 
-              <div className="row is-active">
+              <label className="row is-active">
                 <input name="isActive" type="checkbox" ref={register}/>
                 <span>Is active</span>
-              </div>
+              </label>
             </section>
 
           </DialogContent>

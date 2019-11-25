@@ -16,14 +16,14 @@ const App: React.FC = observer(() => {
   return (
       <>
         <AppHeader/>
-        <div className="App">
+        <main className="App">
           <UsersHeader/>
           <UsersTable/>
           <div aria-live="polite" className="visually-hidden">
             {text}
           </div>
           {dialogRef && dialogRef.elem}
-        </div>
+        </main>
         <AppFooter/>
       </>
   );

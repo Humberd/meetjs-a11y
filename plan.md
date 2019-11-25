@@ -89,3 +89,24 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
   {text}
 </div>
 ```
+
+### 4. Focus Trap
+
+1. `dialog.tsx`: Dodac Focus Trap
+```html
+<FocusTrap
+    focusTrapOptions={{
+      clickOutsideDeactivates: true,
+    }}
+>
+  <div
+      className="AppDialog top-level-container"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="DialogTitle"
+      onClick={event => event.stopPropagation()}
+  >
+    {children}
+  </div>
+</FocusTrap>
+```

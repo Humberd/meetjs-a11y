@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './dialog.scss';
 import { OnCloseListener } from '../services/dialogs.service';
-import FocusTrap from 'focus-trap-react';
 import { FaTimes } from 'react-icons/all';
 
 export interface DialogOptions<T> {
@@ -13,21 +12,15 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
 
   return (
       <div className="AppDialog--Backdrop" onClick={() => onClose()}>
-        <FocusTrap
-            focusTrapOptions={{
-              clickOutsideDeactivates: true,
-            }}
+        <div
+            className="AppDialog top-level-container"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="DialogTitle"
+            onClick={event => event.stopPropagation()}
         >
-          <div
-              className="AppDialog top-level-container"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="DialogTitle"
-              onClick={event => event.stopPropagation()}
-          >
-            {children}
-          </div>
-        </FocusTrap>
+          {children}
+        </div>
       </div>
   );
 };

@@ -141,4 +141,13 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 ### 5. Formularz
 
 1. `create-user-dialog.tsx`: Zamienic `<div className="row">` na `<label className="row">`
-
+2. `create-user-dialog.tsx`: Dodać `aria-required={true}` do inputu name.
+3. `create-user-dialog.tsx`: Dodać `aria-invalid={!!errors.name}` do inputu name.
+4. `create-user-dialog.tsx`: 
+    1. Dodać `aria-describedby="error-name-required"` do inputu name.
+    2. Edytować error message
+```html
+<span role="alert" id="error-name-required" className="error-message">
+  This field is required
+</span>
+```    

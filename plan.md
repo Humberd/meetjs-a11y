@@ -26,7 +26,17 @@
 }
 ```
     
-4. `users-header.tsx`: Dodać `aria-label="Create new user"` do buttona
+4. `users-header.tsx`: Dodać `aria-label="Create new user"`
+```html
+<button
+    className="app-button success new"
+    onClick={openDialog}
+    aria-label="Create new" <-- dodać aria-label
+>
+  <FaPlus/>
+  New
+</button>
+```
 5. `users.tsx`: Dodać title:
     1. `title="Edit user"`
     2. `title="Delete user"`

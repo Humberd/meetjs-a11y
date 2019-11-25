@@ -54,7 +54,7 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                 />
               </label>
               {errors.name && errors.name.type === 'required' && (
-                  <p role="alert" className="error-message">
+                  <p role="alert" id="error-name-required" className="error-message">
                     This field is required
                   </p>
               )}

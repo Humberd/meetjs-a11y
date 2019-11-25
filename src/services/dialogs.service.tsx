@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import { observable } from 'mobx';
-import { GlobalAnnouncer } from './announcer.service';
 import { CreateUserDialog } from '../components/dialogs/create-user-dialog';
 import { NewUser, User } from '../models';
 import { DeleteUserDialog } from '../components/dialogs/delete-user-dialog';
@@ -43,9 +42,7 @@ export class DialogsService {
   private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
     dialogRef.addOnCloseListener(() => {
       this.dialogRef = null;
-      GlobalAnnouncer.announce('Dialog closed');
     });
-    GlobalAnnouncer.announce('Dialog opened');
 
     this.dialogRef = dialogRef;
 

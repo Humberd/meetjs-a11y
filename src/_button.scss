@@ -23,6 +23,19 @@
 		}
 	}
 
+	&.only-icon {
+		background-color: transparent;
+		color: #676A7A;
+		border-radius: 50%;
+		padding: 15px;
+
+		&:hover,
+		&:focus {
+			background-color: rgba(223, 225, 246, 0.71);
+			color: #161440;
+		}
+	}
+
 	&.neutral {
 		background-color: transparent;
 		color: #000;
@@ -35,21 +48,17 @@
 			background-color: #000;
 		}
 	}
-	
-	&.only-icon {
-		background-color: transparent;
-		color: #676A7A;
-		border-radius: 50%;
 
-		padding: 15px;
+	&.warn {
+		background-color: #730120;
+		color: #FFFFFF;
 
 		&:hover,
 		&:focus {
-			background-color: rgba(223, 225, 246, 0.71);
-			color: #161440;
+			background-color: #490114;
 		}
 	}
-	
+
 	&:not(.only-icon) svg {
 		margin-right: 25px;
 	}

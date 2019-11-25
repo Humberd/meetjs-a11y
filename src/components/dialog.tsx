@@ -86,6 +86,7 @@ export const DialogFooter: React.FC<DialogFooterProps<any>> = ({onClose, childre
             onClick={() => onClose()}
             type="button"
             title="Close dialog"
+            aria-label="Close dialog"
         >
           <FaTimes/>
           Cancel

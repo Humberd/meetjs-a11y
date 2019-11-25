@@ -4,6 +4,12 @@
 
 		.form-content {
 			flex: 1;
+
+			.error-message {
+				color: #970000;
+				margin-top: 10px;
+				font-size: 15px;
+			}
 		}
 	}
 
@@ -56,12 +62,6 @@
 			font-weight: 600;
 			font-size: 18px;
 			color: #676A7A;
-		}
-
-		.error-message {
-			color: #970000;
-			margin-top: 10px;
-			font-size: 15px;
 		}
 	}
 }

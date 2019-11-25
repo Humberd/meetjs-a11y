@@ -49,12 +49,12 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                     type="text"
                     ref={register({required: true})}
                 />
-                {errors.name && errors.name.type === 'required' && (
-                    <span className="error-message">
-                      This field is required
-                    </span>
-                )}
               </div>
+              {errors.name && errors.name.type === 'required' && (
+                  <p className="error-message">
+                    This field is required
+                  </p>
+              )}
 
               <div className="row avatar">
                 <span>Avatar</span>

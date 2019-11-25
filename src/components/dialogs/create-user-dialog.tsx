@@ -49,11 +49,12 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                     type="text"
                     aria-required={true}
                     aria-invalid={!!errors.name}
+                    aria-describedby="error-name-required"
                     ref={register({required: true})}
                 />
               </label>
               {errors.name && errors.name.type === 'required' && (
-                  <p className="error-message">
+                  <p role="alert" id="error-name-required" className="error-message">
                     This field is required
                   </p>
               )}

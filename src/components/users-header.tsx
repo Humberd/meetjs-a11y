@@ -23,10 +23,10 @@ export const UsersHeader: React.FC = () => {
 
   return (
       <section className="UsersHeader">
-        <h1 className="title">
+        <span className="title">
           Users
           <span> ({users.length}) </span>
-        </h1>
+        </span>
 
         <div
             className="app-button success new"

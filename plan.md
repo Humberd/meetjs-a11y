@@ -157,3 +157,8 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 1. `index.tsx`: Zamienić `<div>` na `<main>`
 2. `app-header.tsx`: Zamienić `<div>` na `<header>`
 3. `app-footer.tsx`: Zamienić `<div>` na `<footer>`
+
+### 7. Naglowki
+
+1. `users-header.tsx`: Zamiana `<span className="title">` na `<h1 className="title">`
+2. `users.tsx`: Zamiana `<span className="name">` na `<h3 className="name">`

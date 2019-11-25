@@ -38,6 +38,11 @@ $border: 1px solid #DFE2F7;
 			margin-right: 20px;
 		}
 
+		&.name {
+			font-size: 18.5px;
+			font-weight: 700;
+		}
+
 		.actions {
 			display: flex;
 			margin-right: 36px;

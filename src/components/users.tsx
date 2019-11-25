@@ -63,7 +63,7 @@ export const UserRow: React.FC<UserItemProps> = observer(({user, index}) => {
         <td><span className="counter">{index + 1}.</span></td>
         <td><Avatar src={user.avatar} className="avatar"/></td>
         <td>
-          <h3>{user.name}</h3>
+          <span className="name">{user.name}</span>
         </td>
 
         <td>

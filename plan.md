@@ -162,3 +162,8 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 
 1. `users-header.tsx`: Zamiana `<span className="title">` na `<h1 className="title">`
 2. `users.tsx`: Zamiana `<span className="name">` na `<h3 className="name">`
+
+
+### 8. Tabelka
+
+1.

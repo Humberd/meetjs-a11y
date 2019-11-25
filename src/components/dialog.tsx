@@ -21,7 +21,6 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
           <div
               className="AppDialog top-level-container"
               role="dialog"
-              aria-modal="true"
               aria-labelledby="DialogTitle"
               onClick={event => event.stopPropagation()}
           >

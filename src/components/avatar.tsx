@@ -9,6 +9,6 @@ export interface AvatarProps {
 
 export const Avatar: React.FC<AvatarProps> = ({className = '', src}) => {
   return (
-      <img src={src || DEFAULT_AVATAR} alt="user avatar" className={className + ' avatar'}/>
+      <img src={src || DEFAULT_AVATAR} alt="user avatar" aria-hidden={true} className={className + ' avatar'}/>
   );
 };

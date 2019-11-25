@@ -38,5 +38,19 @@
 </button>
 ```
 5. `users.tsx`: Dodać title:
-    1. `title="Edit user"`
-    2. `title="Delete user"`
+```html
+<button
+    className="app-button only-icon edit"
+    onClick={onUpdateUser}
+    title="Edit user" <!-- dodać title -->
+>
+  <FaEdit/>
+</button>
+<button
+    className="app-button only-icon delete"
+    onClick={onDeleteUser}
+    title="Delete user" <!-- dodać title -->
+>
+  <FaTrash/>
+</button>
+```

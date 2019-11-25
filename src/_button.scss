@@ -17,8 +17,7 @@
 		background-color: #249FAB;
 		color: #FFFFFF;
 
-		&:hover,
-		&:focus {
+		&:hover {
 			background-color: #225f6b;
 		}
 	}
@@ -29,8 +28,7 @@
 		border-radius: 50%;
 		padding: 15px;
 
-		&:hover,
-		&:focus {
+		&:hover{
 			background-color: rgba(223, 225, 246, 0.71);
 			color: #161440;
 		}

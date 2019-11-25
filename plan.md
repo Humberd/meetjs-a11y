@@ -167,3 +167,17 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 ### 9. Header logo
 
 1. `app-header`: Dodać `alt="Meet.js logo"` do obrazka
+
+
+### 10. Table
+
+1. `avatar.tsx`: Dodaje `aria-hidden="true"` do obrazka.
+2. `users.tsx`: Dodaje
+
+```html
+<th aria-label="Row counter"/>
+<th aria-label="Avatar"/>
+```
+
+3. `users.tsx`: Dodaje `<table aria-label="Users table">`
+4. `users.tsx`: Dodaje `<tr aria-label={!user.isActive ? 'User inactive' : undefined}> 

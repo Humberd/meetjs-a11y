@@ -31,7 +31,7 @@
 <button
     className="app-button success new"
     onClick={openDialog}
-    aria-label="Create new" <-- dodać aria-label
+    aria-label="Create new" <!-- <-- dodać aria-label -->
 >
   <FaPlus/>
   New

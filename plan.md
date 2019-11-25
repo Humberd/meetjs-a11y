@@ -164,12 +164,12 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
 2. `users.tsx`: Zamiana `<span className="name">` na `<h3 className="name">`
 
 
-### 9. Header logo
+### 8. Header logo
 
 1. `app-header`: Dodać `alt="Meet.js logo"` do obrazka
 
 
-### 10. Table
+### 9. Table
 
 1. `avatar.tsx`: Dodaje `aria-hidden="true"` do obrazka.
 2. `users.tsx`: Dodaje

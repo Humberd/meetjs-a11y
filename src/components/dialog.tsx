@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './dialog.scss';
 import { OnCloseListener } from '../services/dialogs.service';
 import { FaTimes } from 'react-icons/all';
+import FocusTrap from 'focus-trap-react';
 
 export interface DialogOptions<T> {
   onClose: OnCloseListener<T>;
@@ -12,12 +13,20 @@ export const Dialog: React.FC<DialogOptions<any>> = ({onClose, children}) => {
 
   return (
       <div className="AppDialog--Backdrop" onClick={() => onClose()}>
-        <div
-            className="AppDialog top-level-container"
-            onClick={event => event.stopPropagation()}
+        <FocusTrap
+            focusTrapOptions={{
+              clickOutsideDeactivates: true,
+            }}
         >
-          {children}
-        </div>
+          <div
+              className="AppDialog top-level-container"
+              role="dialog"
+              aria-labelledby="DialogTitle"
+              onClick={event => event.stopPropagation()}
+          >
+            {children}
+          </div>
+        </FocusTrap>
       </div>
   );
 };
@@ -30,7 +39,7 @@ export interface DialogHeaderProps<T> {
 export const DialogHeader: React.FC<DialogHeaderProps<any>> = ({onClose, title}) => {
   return (
       <header className="DialogHeader">
-        <h2 className="dialogTitle">
+        <h2 className="dialogTitle" id="DialogTitle">
           {title}
         </h2>
 

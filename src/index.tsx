@@ -19,6 +19,9 @@ const App: React.FC = observer(() => {
         <div className="App">
           <UsersHeader/>
           <UsersTable/>
+          <div aria-live="polite" className="visually-hidden">
+            {text}
+          </div>
           {dialogRef && dialogRef.elem}
         </div>
         <AppFooter/>

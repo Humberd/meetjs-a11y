@@ -28,13 +28,14 @@ export const UsersHeader: React.FC = () => {
           <span> ({users.length}) </span>
         </span>
 
-        <div
+        <button
             className="app-button success new"
             onClick={openDialog}
+            aria-label="Create new user"
         >
           <FaPlus/>
           New
-        </div>
+        </button>
       </section>
   );
 };

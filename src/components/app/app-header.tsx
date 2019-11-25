@@ -4,8 +4,8 @@ import './app-header.scss';
 
 export const AppHeader: React.FC = () => {
   return (
-      <header className="top-level-container AppHeader">
+      <div className="top-level-container AppHeader">
         <img src={meetjs} alt="Meet.js logo"/>
-      </header>
+      </div>
   );
 };

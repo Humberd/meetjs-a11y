@@ -151,3 +151,9 @@ private openDialog<T>(dialogRef: DialogRef<T>): DialogRef<T> {
   This field is required
 </span>
 ```    
+
+### 6. Punkty orientacyjne
+
+1. `index.tsx`: Zamienić `<div>` na `<main>`
+2. `app-header.tsx`: Zamienić `<div>` na `<header>`
+3. `app-footer.tsx`: Zamienić `<div>` na `<footer>`

@@ -68,20 +68,18 @@ export const UserRow: React.FC<UserItemProps> = observer(({user, index}) => {
 
         <td>
           <div className="actions">
-            <button
+            <div
                 className="app-button only-icon edit"
-                title="Edit user"
                 onClick={onUpdateUser}
             >
               <FaEdit/>
-            </button>
-            <button
+            </div>
+            <div
                 className="app-button only-icon delete"
-                title="Delete user"
                 onClick={onDeleteUser}
             >
               <FaTrash/>
-            </button>
+            </div>
           </div>
         </td>
       </tr>

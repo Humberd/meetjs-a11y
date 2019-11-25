@@ -20,7 +20,7 @@
 		justify-content: center;
 		align-items: center;
 
-		.avatar {
+		.avatar-preview {
 			width: 120px;
 			height: 120px;
 		}
@@ -35,13 +35,19 @@
 		justify-content: flex-start;
 		width: 100%;
 
-		&.horizontal {
+		&.is-active {
 			flex-direction: row;
 			align-items: center;
 
 			span {
 				margin-bottom: 0;
 				margin-left: 10px;
+			}
+		}
+
+		&.avatar {
+			select {
+				width: 150px;
 			}
 		}
 

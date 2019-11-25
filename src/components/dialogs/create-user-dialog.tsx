@@ -38,7 +38,7 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
           <DialogContent className="content">
 
             <section className="preview">
-              <Avatar src={watch('avatar')} className="avatar"/>
+              <Avatar src={watch('avatar')} className="avatar-preview"/>
             </section>
 
             <section className="form-content">
@@ -59,7 +59,7 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                 )}
               </label>
 
-              <label className="row">
+              <label className="row avatar">
                 <span>Avatar</span>
                 <select name="avatar" ref={register}>
                   <option/>
@@ -69,7 +69,7 @@ export const CreateUserDialog: React.FC<CreateUserDialogProps<NewUser>> = ({onCl
                 </select>
               </label>
 
-              <label className="row horizontal">
+              <label className="row is-active">
                 <input name="isActive" type="checkbox" ref={register}/>
                 <span>Is active</span>
               </label>

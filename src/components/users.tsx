@@ -11,7 +11,7 @@ export const UsersTable = observer(() => {
   const {users} = useContext(UsersContext);
 
   return (
-      <table className="UsersTable top-level-container">
+      <table className="UsersTable top-level-container" aria-label="Users table">
         <thead>
         <tr>
           <th aria-label="Row counter"/>
@@ -60,8 +60,8 @@ export const UserRow: React.FC<UserItemProps> = observer(({user, index}) => {
 
   return (
       <tr aria-label={!user.isActive ? 'User inactive' : undefined}>
-        <td><span className="counter" aria-hidden="true">{index + 1}.</span></td>
-        <td><Avatar src={user.avatar}/></td>
+        <td><span className="counter">{index + 1}.</span></td>
+        <td><Avatar src={user.avatar} className="avatar"/></td>
         <td>
           <h3>{user.name}</h3>
         </td>

@@ -16,11 +16,11 @@ const App: React.FC = observer(() => {
   return (
       <>
         <AppHeader/>
-        <div className="App">
+        <main className="App">
           <UsersHeader/>
           <UsersTable/>
           {dialogRef && dialogRef.elem}
-        </div>
+        </main>
         <AppFooter/>
       </>
   );

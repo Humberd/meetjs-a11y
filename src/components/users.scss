@@ -55,13 +55,8 @@ $border: 1px solid #DFE2F7;
 
 	tbody > tr {
 		&.inactive {
-			opacity: 0.6;
-
-			transition: opacity 0.1s ease-out;
-
-			&:hover,
-			&:focus-within {
-				opacity: 1;
+			td:not(:last-child) {
+				opacity: 0.6;
 			}
 		}
 	}

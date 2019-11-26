@@ -2,8 +2,8 @@ import React from 'react';
 import { Dialog, DialogContent, DialogFooter, DialogHeader } from '../dialog';
 import { OnCloseListener } from '../../services/dialogs.service';
 import { User } from '../../models';
-import { FaTrash } from 'react-icons/all';
 import './delete-user-dialog.scss';
+import { AppTrashIcon } from '../app/app-icons';
 
 export interface DeleteUserDialogProps<T> {
   onClose: OnCloseListener<T>,
@@ -25,7 +25,7 @@ export const DeleteUserDialog: React.FC<DeleteUserDialogProps<number>> = ({onClo
 
           <DialogFooter onClose={onClose}>
             <button className="app-button warn">
-              <FaTrash/>
+              <AppTrashIcon/>
               Delete
             </button>
           </DialogFooter>

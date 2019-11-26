@@ -2,11 +2,11 @@ import React from 'react';
 import { NewUser, User } from '../models';
 import { observable } from 'mobx';
 
-export const DEFAULT_AVATAR = './default-user.png';
+export const DEFAULT_AVATAR = './assets/images/default-user.png';
 
 export const USER_AVATARS = [
   'https://i7.pngguru.com/preview/178/419/741/computer-icons-avatar-login-user-avatar.jpg',
-  'https://p7.hiclipart.com/preview/118/942/565/computer-icons-avatar-child-user-avatar-thumbnail.jpg',
+  './assets/images/girl-icon.png',
 ];
 
 const initialUsers: User[] = [

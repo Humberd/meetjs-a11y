@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { User } from '../models';
-import { FaEdit, FaTrash } from 'react-icons/all';
 import './users.scss';
 import { UsersContext } from '../services/users.service';
 import { observer } from 'mobx-react';
 import { Avatar } from './avatar';
 import { DialogsContext } from '../services/dialogs.service';
+import { AppEditIcon, AppTrashIcon } from './app/app-icons';
 
 export const UsersTable = observer(() => {
   const {users} = useContext(UsersContext);
@@ -76,14 +76,14 @@ export const UserRow: React.FC<UserItemProps> = observer(({user, index}) => {
                 title="Edit user"
                 onClick={onUpdateUser}
             >
-              <FaEdit/>
+              <AppEditIcon/>
             </button>
             <button
                 className="app-button only-icon delete"
                 title="Delete user"
                 onClick={onDeleteUser}
             >
-              <FaTrash/>
+              <AppTrashIcon/>
             </button>
           </div>
         </td>

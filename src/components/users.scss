@@ -18,7 +18,7 @@ $border: 1px solid #DFE2F7;
 		color: #676A7A;
 		text-align: left;
 
-		.name {
+		&.name {
 			width: 100%;
 		}
 
@@ -36,6 +36,11 @@ $border: 1px solid #DFE2F7;
 			color: #676A7A;
 			margin-left: 36px;
 			margin-right: 20px;
+		}
+
+		.name {
+			font-weight: 700;
+			font-size: 18.5px;
 		}
 
 		.actions {

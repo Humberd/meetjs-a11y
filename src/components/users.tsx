@@ -59,7 +59,9 @@ export const UserRow: React.FC<UserItemProps> = observer(({user, index}) => {
   };
 
   return (
-      <tr>
+      <tr
+          className={!user.isActive ? 'inactive' : undefined}
+      >
         <td><span className="counter">{index + 1}.</span></td>
         <td><Avatar src={user.avatar} className="avatar"/></td>
         <td>

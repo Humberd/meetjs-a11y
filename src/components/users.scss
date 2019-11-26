@@ -52,4 +52,17 @@ $border: 1px solid #DFE2F7;
 			margin-right: 10px;
 		}
 	}
+
+	tbody > tr {
+		&.inactive {
+			opacity: 0.6;
+
+			transition: opacity 0.1s ease-out;
+
+			&:hover,
+			&:focus-within {
+				opacity: 1;
+			}
+		}
+	}
 }

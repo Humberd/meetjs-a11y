@@ -48,6 +48,6 @@
 ### 9. Table
 
 1. `avatar.tsx`: Dodaje `aria-hidden="true"` do obrazka.
-2. `users.tsx`: Dodaje
+2. `users.tsx`: Dodaje `aria-label` do `<th>`
 3. `users.tsx`: Dodaje `<table aria-label="Users table">`
-4. `users.tsx`: Dodaje `<tr aria-label={!user.isActive ? 'User inactive' : undefined}> 
+4. `users.tsx`: Dodaje `<tr aria-label={!user.isActive ? 'User inactive' : undefined}> `

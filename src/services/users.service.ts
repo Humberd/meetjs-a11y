@@ -2,7 +2,7 @@ import React from 'react';
 import { NewUser, User } from '../models';
 import { observable } from 'mobx';
 
-export const DEFAULT_AVATAR = 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png';
+export const DEFAULT_AVATAR = './default-user.png';
 
 export const USER_AVATARS = [
   'https://i7.pngguru.com/preview/178/419/741/computer-icons-avatar-login-user-avatar.jpg',
